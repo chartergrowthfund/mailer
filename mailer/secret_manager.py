@@ -7,7 +7,7 @@ class Secret:
     def __init__(self):
         self.client = secretmanager.SecretManagerServiceClient()
         credentials = self.client._transport._credentials
-        self.project_id = credentials._project_id or credentials._quota_project_id
+        self.project_id = credentials.get("_project_id") or credentials.get("_quota_project_id")
 
     def access(self, secret_id):
         """
