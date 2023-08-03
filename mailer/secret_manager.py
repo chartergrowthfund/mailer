@@ -6,7 +6,8 @@ import os
 class Secret:
     def __init__(self):
         self.client = secretmanager.SecretManagerServiceClient()
-        self.project_id = self.client._transport._credentials._project_id
+        credentials = self.client._transport._credentials
+        self.project_id = credentials._project_id or credentials._quota_project_id
 
     def access(self, secret_id):
         """
