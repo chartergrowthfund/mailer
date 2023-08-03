@@ -1,5 +1,5 @@
 import requests
-from secret_manager import Secret
+from mailer.secret_manager import Secret
 import json
 from pathlib import Path
 
