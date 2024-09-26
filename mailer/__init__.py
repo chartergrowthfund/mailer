@@ -10,8 +10,7 @@ class Mailer:
         self.secrets = Secret()
         self.token = self.secrets.access("MAILGUN_TOKEN")
         self.auth = ("api", self.token)
-        default_sender = "datacollection@chartergrowthfund.org"
-        self.sender = sender or f"{default_sender} <{default_sender}>"
+        self.sender = sender
         self.subject = None
         self.template = None
         self.recipients = []
