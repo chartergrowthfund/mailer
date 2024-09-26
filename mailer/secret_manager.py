@@ -1,6 +1,4 @@
 from google.cloud import secretmanager
-import json
-import os
 
 
 class Secret:
